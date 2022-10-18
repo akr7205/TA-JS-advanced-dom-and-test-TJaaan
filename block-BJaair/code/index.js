@@ -11,7 +11,14 @@ form.addEventListener('submit', (e) => {
     cardsData.push({ title, category });
     localStorage.setItem('cards', JSON.stringify(cardsData));
     createUI(cardsData, ul)
+    clearInput(e.target.elements.title,e.target.elements.category);
 })
+
+
+function clearInput(title,category){
+    title.value='';
+    category.value='';
+}
 
 function handleEdit(e, info, id, label) {
     let elm = e.target;
